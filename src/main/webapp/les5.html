@@ -3,6 +3,7 @@
 <head>
 	<title>Practicum les 5</title>
 	<link rel="stylesheet" type="text/css" href="css/les5.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body onLoad="initPage();">
 <div id="frame">
@@ -32,8 +33,6 @@
 			<label id="ip"></label><br>
 		</div>
 	</div>
-</div>
-<div class="container">
 	<div id="weatherInfo">
 		<div class="boxtitle">
 			<h3 id="stad">Het weer in </h3>
@@ -56,22 +55,23 @@
 			<label id="zonsondergang"></label><br>
 		</div>
 	</div>
-</div>
-<div class="container">
 	<div id="countryList">
-	<div class="boxtitle">
+		<div class="boxtitle">
 			<h3>Beschikbare vakantiebestemmingen</h3>
 		</div>
-		<table id="table">
-			<tr id="theaders">
-				<th>Land</th>
-				<th>Hoofdstad</th>
-				<th>Regio</th>
-				<th>Oppervlakte</th>
-				<th>Inwoners</th>
-			</tr>
-		</table>
+		<div id="scrollbar">
+			<table id="table">
+				<tr id="theaders">
+					<th>Land</th>
+					<th>Hoofdstad</th>
+					<th>Regio</th>
+					<th>Oppervlakte</th>
+					<th>Inwoners</th>
+				</tr>
+			</table>
+		</div>
 	</div>
+<!--  end of frame -->
 </div>
 <script src="js/les5.js"></script>
 </body>

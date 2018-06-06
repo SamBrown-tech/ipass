@@ -19,7 +19,7 @@ function initPage() {
 			showWeather(lat,long,city);
 			loadCountries();
 			getMyLocation();
-		})	
+		})			
 }
 
 function showWeather(lat, long, city) {
@@ -28,14 +28,35 @@ function showWeather(lat, long, city) {
 		.then(response => response.json())
 		.then(function(myJson){		
 			var temp = " graden";
-			document.querySelector("#stad").innerHTML = city;
-			document.querySelector("#temperatuur").innerHTML = myJson.main.temp + temp;
-			document.querySelector("#luchtvochtigheid").innerHTML = myJson.main.humidity;
-			document.querySelector("#windsnelheid").innerHTML = myJson.wind.speed;
-			document.querySelector("#windrichting").innerHTML = myJson.wind.deg;
-			document.querySelector("#zonsopgang").innerHTML = myJson.sys.sunrise;
-			document.querySelector("#zonsondergang").innerHTML = myJson.sys.sunset;
+			var stad = document.querySelector("#stad").innerHTML = city;
+			var temperatuur = document.querySelector("#temperatuur").innerHTML = myJson.main.temp + temp;
+			var luchtvochtigheid = document.querySelector("#luchtvochtigheid").innerHTML = myJson.main.humidity;
+			var windsnelheid = document.querySelector("#windsnelheid").innerHTML = myJson.wind.speed;
+			var windrichting = document.querySelector("#windrichting").innerHTML = myJson.wind.deg;
+			var zonsopgang = document.querySelector("#zonsopgang").innerHTML = myJson.sys.sunrise;
+			var zonsondergang = document.querySelector("#zonsondergang").innerHTML = myJson.sys.sunset;
+			var expiration_time = new Date().getTime() + (1000 * 60 * 10);
+			var weather = { 
+				"stad" : stad, 
+				"temperatuur" : temperatuur, 
+				"luchtvochtigheid" : luchtvochtigheid,
+				"windsnelheid" : windsnelheid,
+				"windrichting" : windrichting,
+				"zonsopgang" : zonsopgang,
+				"zonsondergang" : zonsondergang,
+				"expiration_time" : expiration_time
+			};					
+			var current_time = new Date().getTime();
 			
+			window.localStorage.setItem(stad, JSON.stringify(weather));
+			
+			for(country in window.localStorage){
+				var c_storage = JSON.parse(window.localStorage.getItem(country));
+				console.log(c_storage.expiration_time);
+				if(current_time < c_storage.expiration_time){
+					localStorage.removeItem(country);
+				}
+			}		
 		})
 }
 
@@ -44,7 +65,6 @@ function loadCountries() {
 	fetch(uri)
 		.then(response => response.json())
 		.then(function(myJson){
-//			document.querySelector("#table");
 			for(const country of myJson){
 				var table = document.getElementById("table");
 				var row = table.insertRow(1);
@@ -64,8 +84,7 @@ function loadCountries() {
 				cell4.innerHTML = country.surface;
 				cell5.innerHTML = country.population;
 				cell6.innerHTML = country.lat;
-				cell7.innerHTML = country.lng;
-				
+				cell7.innerHTML = country.lng;				
 			}
 			
 			table = document.querySelectorAll("#table tr");
