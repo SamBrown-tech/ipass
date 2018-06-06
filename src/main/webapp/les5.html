@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Practicum les 5</title>
+	<link rel="stylesheet" type="text/css" href="css/les5.css">
+</head>
+<body onLoad="initPage();">
+<div id="frame">
+	<div id="myLocation">
+		<div class="boxtitle">
+			<h3>Mijn locatie</h3>
+		</div>
+		<div id="boxleft">
+			<label>Landcode:</label><br>
+			<label>Land:</label><br>
+			<label>Regio:</label><br>
+			<label>Stad:</label><br>
+			<label>Postcode:</label><br>
+			<label>Latitude:</label><br>
+			<label>Longitude:</label><br>
+			<label>IP:</label><br>
+		</div>
+
+		<div id="boxright">
+			<label id="country"></label><br>
+			<label id="country_name"></label><br>
+			<label id="region"></label><br>
+			<label id="city"></label><br>
+			<label id="postal"></label><br>
+			<label id="latitude"></label><br>
+			<label id="longitude"></label><br>
+			<label id="ip"></label><br>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div id="weatherInfo">
+		<div class="boxtitle">
+			<h3 id="stad">Het weer in </h3>
+		</div>
+		<div id="boxleft">
+			<label>Temperatuur:</label><br>
+			<label>Luchtvochtigheid:</label><br>
+			<label>Windsnelheid:</label><br>
+			<label>Windrichting:</label><br>
+			<label>Zonsopgang:</label><br>
+			<label>Zonsondergang:</label><br>
+		</div>
+
+		<div id="boxright">
+			<label id="temperatuur"> graden</label><br>
+			<label id="luchtvochtigheid"></label><br>
+			<label id="windsnelheid"></label><br>
+			<label id="windrichting"></label><br>
+			<label id="zonsopgang"></label><br>
+			<label id="zonsondergang"></label><br>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div id="countryList">
+	<div class="boxtitle">
+			<h3>Beschikbare vakantiebestemmingen</h3>
+		</div>
+		<table id="table">
+			<tr id="theaders">
+				<th>Land</th>
+				<th>Hoofdstad</th>
+				<th>Regio</th>
+				<th>Oppervlakte</th>
+				<th>Inwoners</th>
+			</tr>
+		</table>
+	</div>
+</div>
+<script src="js/les5.js"></script>
+</body>
+</html>

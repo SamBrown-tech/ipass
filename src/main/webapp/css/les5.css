@@ -1,0 +1,54 @@
+body {
+	background-color: #e0d5cc;
+}
+
+#frame {
+	height: 225px;
+}
+
+#table {
+	width:98%;
+	background-color: #998e86;
+	margin-bottom: 1%;
+}
+
+#table th {
+	text-align: left;
+}
+
+#table #theaders:hover {
+	background:#998e86;
+}
+
+#table tr:hover {
+	background: #fff;
+}
+
+.container {
+	height:170px;
+}
+
+h3 {
+	color: #fff;
+	
+}
+.boxtitle {
+	width:98%;
+	background-color: #998e86;
+}
+
+#boxleft {
+	float:left;
+	display:block;
+	width: 90px;
+}
+
+#boxright {
+	margin-left: 5%;
+	float:left;	
+}
+
+.hide {
+	display:none;
+}
+

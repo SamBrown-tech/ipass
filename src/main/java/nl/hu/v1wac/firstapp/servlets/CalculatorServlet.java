@@ -34,7 +34,7 @@ public class CalculatorServlet extends HttpServlet {
 			 out.println(number1 + " x " + number2 + " = " + (number1 * number2));
 		 } else if(divide != null) {
 			 out.println(number1 + " / " + number2 + " = " + (number1 / number2));
-		 }
+		 } 
 		 
 		 out.println(" </body>");
 		 out.println("</html>");
