@@ -12,61 +12,80 @@ public class Country {
 	private String government;
 	private double latitude;
 	private double longitude;
-	
-	public Country(String code, String iso3, String nm, String cap, String ct, String reg, double sur, int pop, String gov, double lat, double lng) {
-		this.code = code; 
-		this.iso3 = iso3;
-		this.name = nm;
-		this.capital = cap;
-		this.continent = ct;
-		this.region = reg;
-		this.surface = sur;
-		this.population = pop;
-		this.government = gov;
-		this.latitude = lat;
-		this.longitude = lng;
-	}
-	
+
+
 	public String getCode() {
 		return code;
 	}
-	
+
+	public void setCode(String cd) {
+		this.code = cd;
+	}
+
 	public String getIso3() {
 		return iso3;
 	}
-	
+	public void setIso3(String cd) {
+		this.iso3 = cd;
+	}
 	public String getName() {
 		return name;
 	}
-	
+	public void setName(String cd) {
+		this.name = cd;
+	}
 	public String getCapital() {
 		return capital;
 	}
-	
+	public void setCapital(String cd) {
+		this.capital = cd;
+	}
 	public String getContinent() {
 		return continent;
 	}
-	
+	public void setContinent(String cd) {
+		this.continent = cd;
+	}
+	public void setRegion(String cd) {
+		this.region = cd;
+	}
+
 	public String getRegion() {
 		return region;
 	}
-	
+	public void setSurface(double cd) {
+		this.surface = cd;
+	}
+
 	public double getSurface() {
 		return surface;
 	}
-	
+	public void setPopulation(int cd) {
+		this.population = cd;
+	}
 	public int getPopulation() {
 		return population;
 	}
-	
+	public void setGovernment(String cd) {
+		this.government = cd;
+	}
+
 	public String getGovernment() {
 		return government;
 	}
-	
+
+	public void setLatitude(double cd) {
+		this.latitude = cd;
+	}
+
 	public double getLatitude() {
 		return latitude;
 	}
-	
+
+	public void setLongitude(double cd) {
+		this.longitude = cd;
+	}
+
 	public double getLongitude() {
 		return longitude;
 	}
