@@ -55,7 +55,55 @@
 			<label id="zonsondergang"></label><br>
 		</div>
 	</div>
-	<div id="countryList">
+	<div class="container3">
+		<div class="boxtitle">
+				<h3>Beschikbare vakantiebestemmingen</h3><input style="float: right;" type="button" class="btn3" value="ADD">
+		</div>
+		<div class="wijzigBox">
+			<form id="wijzigLand" autocomplete="off">
+				<div><label>Land wijzigen</label></div><br>
+				<div><label>Code: </label><input type="text" id="codeinput" name="countrycode"></div><br>
+				<div><label>Naam: </label><input type="text" id="naaminput" name="name"></div><br>
+				<div><label>Hoofdstad: </label><input type="text" id="stadinput" name="capital"></div><br>
+				<div><label>Regio: </label><input type="text" id="regioinput" name="region"></div><br>
+				<div><label>Oppervlakte: </label><input type="number" id="oppinput" name="surface"></div><br>
+				<div><label>Populatie: </label><input type="number" id="popinput" name="population"></div><br>
+			</form>
+				<div style="float: right;"><button id="wijzigbtn" style="margin-right: 10px;">WIJZIG</button><button id="sluit">SLUIT</button></div>
+		</div>
+			
+			
+		<div class="addBox">
+			<form id="addLand" autocomplete="off">
+				<div><label>Land toevoegen</label></div><br>
+				<div><label>Code: </label><input type="text" id="codeinput1" name="countrycode"></div><br>
+				<div><label>iso3: </label><input type="text" id="isoinput1" name="iso3"></div><br>
+				<div><label>Naam: </label><input type="text" id="naaminput1" name="name"></div><br>
+				<div><label>Hoofdstad: </label><input type="text" id="stadinput1" name="capital"></div><br>
+				<div><label>Continent: </label><input type="text" id="continput1" name="continent"></div><br>
+				<div><label>Regio: </label><input type="text" id="regioinput1" name="region"></div><br>
+				<div><label>Oppervlakte: </label><input type="number" id="oppinput1" name="surface"></div><br>
+				<div><label>Government: </label><input type=text" id="governinput1" name="governmentform"></div><br>
+				<div><label>Populatie: </label><input type="number" id="popinput1" name="population"></div><br>
+				<div><label>Latitude: </label><input  type="number" id="latinput1" name="latitude"></div><br>
+				<div><label>Longitude: </label><input type="number" id="loninput1" name="longitude"></div><br>
+			</form>
+				<div style="float: right;"><button onClick="refreshPage()" id="voegToe" style="margin-right: 10px;">VOEGTOE</button><button id="sluiten">SLUIT</button></div>
+		</div>
+		
+		<!-- <div id="countryList">
+			<table id="landTabel"
+				style="width: 99.5%; margin: auto; text-align: left;">
+				<tr>
+					<th class="head">Land</th>
+					<th class="head">Hoofdstad</th>
+					<th class="head">Regio</th>
+					<th class="head">Oppervlakte</th>
+					<th class="head">Inwoners</th>
+				</tr>
+			</table>
+		</div> -->
+		<div id="countryList">
 		<div class="boxtitle">
 			<h3>Beschikbare vakantiebestemmingen</h3>
 		</div>
@@ -71,8 +119,9 @@
 			</table>
 		</div>
 	</div>
+	</div>
+</div>	
 <!--  end of frame -->
-</div>
 <script src="js/les5.js"></script>
 </body>
 </html>

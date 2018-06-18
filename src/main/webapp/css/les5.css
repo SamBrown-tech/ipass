@@ -61,7 +61,7 @@ h3 {
 	#frame {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		grid-template-rows: 1fr 1fr;
+		grid-template-rows: 0fr 1fr;
 	}
 	#myLocation {
 		grid-column: 1; grid-row: 1;

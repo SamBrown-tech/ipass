@@ -99,11 +99,11 @@ public class WorldResource {
 	}
 
 	@GET
-	@Path("/CN")
+	@Path("{code}")
 	@Produces("application/json")
-	public String getCountryByName() throws SQLException, ClassNotFoundException {
+	public String getCountryByCode(@PathParam("code") String code) throws SQLException, ClassNotFoundException {
 		WorldService service = ServiceProvider.getWorldService();
-		Country country = service.getCountryByCode("CN");
+		Country country = service.getCountryByCode(code);
 		JsonObjectBuilder job = Json.createObjectBuilder();
 		job.add("Name", country.getName());
 		job.add("Capital", country.getCapital());
