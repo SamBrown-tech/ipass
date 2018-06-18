@@ -23,7 +23,7 @@ function initPage() {
 }
 
 function showWeather(lat, long, city) {
-	var uri = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + long + "&appid=a76d194b2adccf904633de0fb698bf82&units=metric";
+	var uri = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + long + 	 "&appid=a76d194b2adccf904633de0fb698bf82&units=metric";
 	fetch(uri)
 		.then(response => response.json())
 		.then(function(myJson){		
@@ -49,14 +49,14 @@ function showWeather(lat, long, city) {
 			var current_time = new Date().getTime();
 			
 			window.localStorage.setItem(stad, JSON.stringify(weather));
-			
-			for(country in window.localStorage){
-				var c_storage = JSON.parse(window.localStorage.getItem(country));
-				console.log(c_storage.expiration_time);
-				if(current_time < c_storage.expiration_time){
-					localStorage.removeItem(country);
-				}
-			}		
+//			
+//			for(country in window.localStorage){
+//				var c_storage = JSON.parse(window.localStorage.getItem(country));
+//				console.log(c_storage.expiration_time);
+//				if(current_time < c_storage.expiration_time){
+//					localStorage.removeItem(country);
+//				}
+//			}		
 		})
 }
 
@@ -78,13 +78,13 @@ function loadCountries() {
 				cell6.className = "hide";
 				cell7.className = "hide";
 								
-				cell1.innerHTML = country.name;
-				cell2.innerHTML = country.capital;
-				cell3.innerHTML = country.region;
-				cell4.innerHTML = country.surface;
-				cell5.innerHTML = country.population;
-				cell6.innerHTML = country.lat;
-				cell7.innerHTML = country.lng;				
+				cell1.innerHTML = country.Name;
+				cell2.innerHTML = country.Capital;
+				cell3.innerHTML = country.Region;
+				cell4.innerHTML = country.Surface;
+				cell5.innerHTML = country.Population;
+				cell6.innerHTML = country.Lat;
+				cell7.innerHTML = country.Lng;				
 			}
 			
 			table = document.querySelectorAll("#table tr");

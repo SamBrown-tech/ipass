@@ -8,7 +8,6 @@ import nl.hu.v1wac.firstapp.persistence.*;
 public class WorldService {
 	public List<Country> getAllCountries() throws SQLException, ClassNotFoundException {
 		CountryDaoPostgresImpl c1 = new CountryDaoPostgresImpl();
-		c1.findAll();
 		return c1.findAll();
 	}
 
