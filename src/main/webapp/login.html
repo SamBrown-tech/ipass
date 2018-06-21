@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Index</title>
+
+<link rel="stylesheet" type="text/css" href="css\login.css">
+
+<link>
+</head>
+
+<body onload="initPageLogin()">
+ 	<div class="container">
+ 		<form id="inloggegevens" autocomplete="on">
+ 				<h1>Voer je inlog gegevens in</h1><br><br>
+				<div class="invoer"><label style="float: left;">Email: </label><input style="float: right;" id="email" type="text" name="email"><br><br>
+				<label style="float: left;">Wachtwoord: </label><input style="float: right;" id="password" type="password" name="password"><br><br>
+				<input style="float: right;" type="button" id="loginbtn" value="Login"></div><br><br>
+			</form>
+			<p>Nog geen account?<a class="maak">Aanmaken</a></p>
+ 	</div>
+ 	
+ 	<div class="maakaccount">
+ 		<form id="maakacc" autocomplete="off">
+ 				<h1>Maak een account</h1><br><br>
+				<div class="invoer"><label style="float: left;">Voornaam: </label><input style="float: right;"id="voornaam" type="text" name="voorname"><br><br>
+				<label style="float: left;">Tussenvoegsel </label><input style="float: right;"id="tussenv" type="text" name="tussenv"><br><br>
+				<label style="float: left;">Achternaam: </label><input style="float: right;"id="achternaam" type="text" name="achternaam"><br><br>
+				<label style="float: left;">Email: </label><input style="float: right;" id="mailadres" type="text" name="email"><br><br>
+				<label style="float: left;">Wachtwoord: </label><input style="float: right;" id="makepass" type="password" name="makepass"><br><br>
+				<input style="float: right;" type="button" id="createbtn" value="OK"></div><br><br>
+			</form>
+ 	</div>
+ 	
+ 	<div class="container2">
+ 	<h3><a href="javascript:history.back()">Klik hier om terug te gaan</a></h3>
+ 	</div>
+ 	
+	<script src="js\login.js" type="text/javascript"></script>
+
+</body>
+
+</html>

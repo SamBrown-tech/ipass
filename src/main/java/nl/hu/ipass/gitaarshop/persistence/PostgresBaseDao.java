@@ -1,4 +1,4 @@
-package nl.hu.v1wac.firstapp.persistence;
+package nl.hu.ipass.gitaarshop.persistence;
 
 import java.sql.Connection;
 

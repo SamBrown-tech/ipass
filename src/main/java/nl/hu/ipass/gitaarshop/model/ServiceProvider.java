@@ -1,9 +1,14 @@
-package nl.hu.v1wac.firstapp.model;
+package nl.hu.ipass.gitaarshop.model;
 
 public class ServiceProvider {
-	private static WorldService worldService = new WorldService();
+	private static ProductService productService = new ProductService();
+	private static PersonService personService = new PersonService();
 
-	public static WorldService getWorldService() {
-		return worldService;
+	public static ProductService getProductService() {
+		return productService;
+	}
+	
+	public static PersonService getPersonService() {
+		return personService;
 	}
 }

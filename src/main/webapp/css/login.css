@@ -1,0 +1,48 @@
+body{
+	background: #fff;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+}
+
+
+.container{
+	width: 350px;
+	height: 250px;
+	margin: 150px auto;
+	margin-bottom: 50px;
+	padding: 50px;
+	background: #e9ecef;
+	posistion: relative;
+	border-radius: 10px;
+}
+
+.maakaccount{
+	width: 350px;
+	height: 300px;
+	margin: 120px auto;
+	padding: 40px;
+	background: #e9ecef;
+	posistion: relative;
+	border-radius: 10px;
+	display: none;
+}
+
+.container2{
+	width: 215px;
+	margin: auto;
+}
+
+a{
+	text-decoration: none;
+	color: black;
+}
+
+a:HOVER{
+	cursor: pointer;
+}
+
+.maak{
+	text-decoration: none;
+	color: #ff2323;
+}

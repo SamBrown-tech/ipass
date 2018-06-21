@@ -3,12 +3,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>nl.hu.v1wac</groupId>
-	<artifactId>firstapp</artifactId>
+	<groupId>nl.hu.ipass</groupId>
+	<artifactId>gitaarshop</artifactId>
 	<version>1.0</version>
 	<packaging>war</packaging>
 
-	<name>firstapp</name>
+	<name>gitaarshop</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -58,8 +58,26 @@
 
 		<dependency>
 			<groupId>org.glassfish.jersey.media</groupId>
+			<artifactId>jersey-media-multipart</artifactId>
+			<version>2.27</version>
+		</dependency>
+
+		<dependency>
+			<groupId>postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>9.0-801.jdbc4</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.glassfish.jersey.media</groupId>
 			<artifactId>jersey-media-json-jackson</artifactId>
 			<version>2.27</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt</artifactId>
+			<version>0.9.0</version>
 		</dependency>
 	</dependencies>
 	<build>
@@ -97,27 +115,29 @@
 					</execution>
 				</executions>
 			</plugin>
-	      <plugin>
-	          <groupId>org.apache.maven.plugins</groupId>
-	          <artifactId>maven-dependency-plugin</artifactId>
-	          <version>2.3</version>
-	          <executions>
-	              <execution>
-	                  <phase>package</phase>
-	                  <goals><goal>copy</goal></goals>
-	                  <configuration>
-	                      <artifactItems>
-	                          <artifactItem>
-	                              <groupId>com.github.jsimone</groupId>
-	                              <artifactId>webapp-runner</artifactId>
-	                              <version>${webapp-runner.version</version>
-	                              <destFileName>webapp-runner.jar</destFileName>
-	                          </artifactItem>
-	                      </artifactItems>
-	                  </configuration>
-	              </execution>
-	          </executions>
-	      </plugin>
-  </plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>2.3</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>copy</goal>
+						</goals>
+						<configuration>
+							<artifactItems>
+								<artifactItem>
+									<groupId>com.github.jsimone</groupId>
+									<artifactId>webapp-runner</artifactId>
+									<version>${webapp-runner.version</version>
+									<destFileName>webapp-runner.jar</destFileName>
+								</artifactItem>
+							</artifactItems>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
 	</build>
 </project>
