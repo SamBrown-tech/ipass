@@ -61,13 +61,13 @@ public class ProductResource {
     }
 	
 	@PUT
-    @RolesAllowed("user")
+//    @RolesAllowed("user")
     @Produces("application/json")
-    public Response updateProduct(@Context SecurityContext sc, @FormParam("name") String name,
+    public Response updateProduct(@Context SecurityContext sc, @FormParam("id") int id, @FormParam("name") String name,
                                   @FormParam("description") String description, @FormParam("image") String image, @FormParam("price") int price) 
                                 		  throws SQLException, ClassNotFoundException {
 		ProductService service = ServiceProvider.getProductService();
-        if (service.update(name, description, image, price)) {
+        if (service.update(id, name, description, image, price)) {
             return Response.ok().build();
         }
         return Response.accepted().build();

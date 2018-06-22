@@ -30,15 +30,16 @@ public class ProductDaoPostgresImpl extends PostgresBaseDao implements ProductDa
         return false;
     }
 	
-	public boolean update(String name, String description, String image, int price) throws SQLException, ClassNotFoundException {
+	public boolean update(int id, String name, String description, String image, int price) throws SQLException, ClassNotFoundException {
         Connection conn = getConnection();
         if (name != null) {
-            String query = "UPDATE product SET name = ?, description = ?, image = ?, price = ?";
+            String query = "UPDATE product SET name = ?, description = ?, image = ?, price = ? WHERE product_id = ?";
             PreparedStatement stat = conn.prepareStatement(query);
             stat.setString(1, name);
             stat.setString(2, description);
             stat.setString(3, image);
             stat.setDouble(4, price);
+            stat.setInt(5, id);
             stat.executeUpdate();
             System.out.println(name + " is geupdate");
             return true;

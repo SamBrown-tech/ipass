@@ -17,9 +17,9 @@ public class ProductService {
 		return true;
 	}
 	
-	public boolean update(String name, String description, String image, int price) throws ClassNotFoundException, SQLException {
+	public boolean update(int id, String name, String description, String image, int price) throws ClassNotFoundException, SQLException {
 		ProductDaoPostgresImpl p1 = new ProductDaoPostgresImpl();
-        p1.update(name, description, image, price);
+        p1.update(id, name, description, image, price);
 
         return true;
 	}

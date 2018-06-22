@@ -4,6 +4,14 @@ function initPageLogin(){
 	addAccount();
 }
 
+var input = document.getElementById("inloggegevens");
+input.addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        document.getElementById("loginbtn").click();
+	    }
+	});
+
 function myLogin(){
     var button = document.querySelector('#loginbtn');
     button.addEventListener('click', function(){
