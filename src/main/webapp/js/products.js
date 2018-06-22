@@ -1,7 +1,8 @@
 function initPage() {
 	loadProducts();
-	//addProduct();
+//	addProduct();
 	wijzigProduct();
+	deleteProduct();
 }
 
 function checkLogin() {	
@@ -74,10 +75,14 @@ function loadProducts() {
 				prijs.className = "mb-0 productprice";
 				prijs.innerHTML = "€ " + price;
 				
+				var aantal = document.createElement("div");
+				aantal.innerHTML= '<label>Aantal: </label><input type="number" min="0" id="productaantal" name="productaantal" value=1 /></input>';
+
 				div3.appendChild(pid);
 				div3.appendChild(titel);
 				div3.appendChild(text);
 				div3.appendChild(prijs);
+				div3.appendChild(aantal);
 				
 				var div4 = document.createElement("div");
 				div4.className = "card-footer";
@@ -86,9 +91,15 @@ function loadProducts() {
 				button.className = "btn btn btn-success";
 				button.setAttribute("data-toggle", "modal");
 				button.setAttribute("data-target", "#myModal");
-				button.innerHTML = "Wijzigen";
+				button.innerHTML = "Beheren";
+				
+				var button2 = document.createElement("button");
+				button2.className = "btn btn btn-success";
+				button2.setAttribute("id", "addOrderPurchaseProduct");
+				button2.innerHTML = "Bestellen";
 				
 				div4.appendChild(button);
+				div4.appendChild(button2);
 				div2.appendChild(div3);
 				div2.appendChild(div4);
 				div.appendChild(div2);
@@ -104,7 +115,26 @@ function loadProducts() {
 					document.querySelector("#editprice").value = product.price;
 					document.querySelector("#editimage").value = product.image;
 				});
-				
+				button2.addEventListener('click', function(e){
+				  document.querySelector("#productid").value = product.product_id;
+				  var quantity = document.querySelector("#productaantal").value;
+				  
+				  var formData = new FormData(document.querySelector("#editProduct"))
+				  var encData = new URLSearchParams(formData.entries());
+				  var encDataWithQuantity = encData + "&quantity=" + quantity;
+				  
+				  console.log(encDataWithQuantity);
+				  
+				  fetch("http://localhost:8080/gitaarshop/restservices/purchaseproduct", { method: 'POST', body: encData})
+				  .then(function (response) {
+					  console.log(response + " response");
+				  if (response.ok){
+				      console.log("Orderproduct toegevoegd."); 
+				       return response.ok();
+				  }
+				  else throw "Kan niet worden toegevoegd.";
+				  })
+				});
 			}
 
 		})
@@ -151,15 +181,19 @@ function wijzigProduct(){
 }
 
 function deleteProduct(){
-	document.querySelector(".delproduct").addEventListener('click', function(event){
-		var naam = document.querySelector("#artikelheader").innerHTML;
-		var url = "http://localhost:8080/gitaarshop/restservices/producten";
-		fetch(url + naam, { method: 'DELETE'})
+	console.log('verwijderfunctie');
+	document.querySelector("#delete").addEventListener('click', function(event){
+		console.log("clickfunctie");
+		console.log(document.querySelector("#editname").value + " lol");
+		var naam = document.querySelector("#editname").value;
+		var url = "http://localhost:8080/gitaarshop/restservices/products/";
+		var complete_url = url + naam;
+		fetch(complete_url, { method: 'DELETE'})
 		.then(function (response) {
 	        if (response.ok){
 	            console.log("Product verwijderd"); 
 	        }
-	        else throw "Kan niet worden verwijderd.";
+	        else throw "Kan niet worden verwijderd. ";
 	    })
 	});
 }

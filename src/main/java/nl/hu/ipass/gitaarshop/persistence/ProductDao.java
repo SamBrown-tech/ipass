@@ -13,5 +13,7 @@ public interface ProductDao {
 	
 	public boolean update(int id, String name, String description, String image, int price) throws SQLException, ClassNotFoundException;
 	
+	public boolean delete(String naam) throws SQLException, ClassNotFoundException;
+	
 	
 }

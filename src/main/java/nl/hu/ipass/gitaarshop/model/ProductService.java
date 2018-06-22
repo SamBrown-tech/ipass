@@ -23,4 +23,11 @@ public class ProductService {
 
         return true;
 	}
+	
+	public boolean delete(String naam) throws  ClassNotFoundException, SQLException {
+		ProductDaoPostgresImpl p1 = new ProductDaoPostgresImpl();
+		p1.delete(naam);
+		
+		return true; 
+	}
 }

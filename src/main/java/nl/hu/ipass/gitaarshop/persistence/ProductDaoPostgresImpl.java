@@ -47,6 +47,21 @@ public class ProductDaoPostgresImpl extends PostgresBaseDao implements ProductDa
         return false;
     }
 	
+	public boolean delete(String naam) throws SQLException, ClassNotFoundException {
+        Connection conn = getConnection();
+
+        if(naam != null) {
+            String insert = "DELETE FROM product WHERE name = ?";
+
+            PreparedStatement stat = conn.prepareStatement(insert);
+            stat.setString(1, naam);
+            stat.executeUpdate();
+            System.out.println("Product " + naam + " is verwijderd\n");
+            return true;
+        }
+        return false;
+    }
+	
 	public List<Product> findAll() throws SQLException, ClassNotFoundException {
 		ArrayList<Product> list_products = new ArrayList<Product>();
 		Connection conn = getConnection();
