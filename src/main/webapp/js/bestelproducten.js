@@ -1,15 +1,15 @@
-function initPageAdmin() {
-	getToken();
-	parseJwt();
+function initPagePurchaseProducts() {
+	getTokenPurchaseProducts();
+	parseJwtPurchaseProducts();
 }
 
-function getToken(){
+function getTokenPurchaseProducts(){
     token = window.sessionStorage.getItem("myJWT");
-    parseJwt(token);
+    parseJwtPurchaseProducts(token);
 }
 
-function parseJwt (token) {
-    var base64Url = token.split('.')[1];;
+function parseJwtPurchaseProducts (token) {
+    var base64Url = token.split('.')[1];
     var base64 = base64Url.replace('-', '+').replace('_', '/');
     var base = JSON.parse(window.atob(base64));
     var jwtmail = base.sub;

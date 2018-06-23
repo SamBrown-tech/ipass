@@ -42,7 +42,7 @@
 <link href="css/image.css" rel="stylesheet">
 
 </head>
-<body onLoad="getToken(); initPage(); initPageLogin();">
+<body onLoad="myLogin(); getToken(); addAccount(); getTokenForPurchase(); initPage();">
 
 	<!-- Navigation -->
 	<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
@@ -93,32 +93,14 @@
 
 								<!-- Modal content-->
 								<div class="modal-content">
-									<div class="modal-header">
-										<h4 class="modal-title">Product wijzigen</h4>
-									</div>
+									<div class="modal-header"><h4 class="modal-title">Product wijzigen</h4></div>
 									<div class="modal-body">
 										<form id="editProduct" autocomplete="on">
-											<div>
-												<label>Naam: </label><input type="text" id="editname"
-													name="name">
-											</div>
-											<br>
-											<div>
-												<label>Omschrijving: </label><input type="text"
-													id="editdescription" name="description">
-											</div>
-											<br>
-											<div>
-												<label>Afbeelding: </label><input type="text" id="editimage"
-													name="image">
-											</div>
-											<br>
-											<div>
-												<label>Prijs: </label><input type="number" id="editprice"
-													name="price">
-											</div>
-											<br> <input type="text" id="productid" name="id"
-												class="hide">
+											<div><label>Naam: </label><input type="text" id="editname" name="name"></div><br>
+											<div><label>Omschrijving: </label><input type="text" id="editdescription" name="description"></div><br>
+											<div><label>Afbeelding: </label><input type="text" id="editimage" name="image"></div><br>
+											<div><label>Prijs: </label><input type="number" id="editprice" name="price"></div><br> 
+											<input type="text" id="productid" name="id"class="hide">
 										</form>
 									</div>
 									<div class="modal-footer">
@@ -179,20 +161,19 @@
 				 	<div class="maakaccount">
 				 		<form id="maakacc" autocomplete="off">
 				 				<h1>Maak een account</h1><br><br>
-								<div class="invoer"><label style="float: left;">Voornaam: </label><input style="float: right;"id="voornaam" type="text" name="voorname"><br><br>
-								<label style="float: left;">Tussenvoegsel </label><input style="float: right;"id="tussenv" type="text" name="tussenv"><br><br>
-								<label style="float: left;">Achternaam: </label><input style="float: right;"id="achternaam" type="text" name="achternaam"><br><br>
-								<label style="float: left;">Email: </label><input style="float: right;" id="mailadres" type="text" name="email"><br><br>
-								<label style="float: left;">Wachtwoord: </label><input style="float: right;" id="makepass" type="password" name="makepass"><br><br>
-								<input class="btn" style="float: right;" type="button" id="createbtn" value="Registreren"></div><br><br>
+								<div class="invoer">
+									<label class="floatleft">Email: </label><input class="floatright" id="mailadres" type="text" name="email"><br><br>
+									<label class="floatleft">Voornaam: </label><input class="floatright" id="voornaam" type="text" name="firstname"><br><br>
+									<label class="floatleft">Achternaam: </label><input class="floatright" id="tussenv" type="text" name="lastname"><br><br>
+									<label class="floatleft">Wachtwoord: </label><input class="floatright" id="makepass" type="password" name="makepass"><br><br>
+									<input class="btn btn-success" style="float: right;" type="button" id="createbtn" value="Registreren">
+								</div><br><br>
 							</form>
 				 	</div>
 				</div>
 				<div class="modal-footer">
 					<button type="button" id="edit" class="btn btn-success">Login</button>
-
-					<button type="button" class="btn btn-danger"
-						data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 				</div>
 			</div> <!--  End register modal content -->
 		</div>
@@ -215,10 +196,7 @@
 				</div>
 				<div class="col-lg-4 mr-auto text-center">
 					<i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
-					<p>
-						<a href="mailto:your-email@your-domain.com"
-							class="visibleforguest">info@gitaarshopalphen.nl</a>
-					</p>
+					<p><a href="mailto:your-email@your-domain.com" class="visibleforguest">info@gitaarshopalphen.nl</a></p>
 				</div>
 			</div>
 		</div>

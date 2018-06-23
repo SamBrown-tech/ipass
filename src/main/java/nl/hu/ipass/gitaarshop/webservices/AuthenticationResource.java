@@ -17,8 +17,8 @@ import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.impl.crypto.MacProvider;
-import nl.hu.ipass.gitaarshop.persistence.personDAO;
-import nl.hu.ipass.gitaarshop.persistence.personPostgresDAOImpl;
+import nl.hu.ipass.gitaarshop.persistence.personDao;
+import nl.hu.ipass.gitaarshop.persistence.personDaoPostgresImpl;
 
 @Path("/authentications")
 public class AuthenticationResource {
@@ -31,7 +31,7 @@ public class AuthenticationResource {
 	                                   @FormParam("password") String password) throws ClassNotFoundException, SQLException {
 	    try {
 	      // Authenticate the user against the database
-	      personDAO dao = new personPostgresDAOImpl();
+	      personDao dao = new personDaoPostgresImpl();
 	      String rol = dao.findRoleForUser(email, password);
 	      
 	      if (rol == null) { throw new IllegalArgumentException("No user found!");  } 

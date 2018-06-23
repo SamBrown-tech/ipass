@@ -1,6 +1,5 @@
 function initPageLogin(){
 	myLogin();
-	displayChange();
 	addAccount();
 }
 
@@ -13,10 +12,12 @@ input.addEventListener("keyup", function(event) {
 	});
 
 function myLogin(){
+	console.log("test")
     var button = document.querySelector('#loginbtn');
     button.addEventListener('click', function(){
         var formData = new FormData(document.querySelector("#inloggegevens"))
         var encData = new URLSearchParams(formData.entries());
+        console.log( "haha");
 
            fetch("http://localhost:8080/gitaarshop/restservices/authentications", { method: 'POST', body: encData, headers: {'Authorization': 'Bearer ' + window.sessionStorage.getItem("myJWT")}})
             .then(function (response) {
@@ -33,51 +34,23 @@ function myLogin(){
             });
 }
 
-function displayChange(){
-	var button = document.querySelector(".maak");
-	button.addEventListener('click', function(){
-		var maak = document.querySelector(".maakaccount");
-		var login = document.querySelector(".container");
-
-		login.style.display = "none";
-		maak.style.display = "block";
-		
-	})
-}
-
 
 function addAccount(){
+	console.log("test");
 	 var button = document.getElementById("createbtn");
 	    button.addEventListener('click', function(){
-	    	var formData = new FormData(document.querySelector("#maakacc"))
-	        var encData = new URLSearchParams(formData.entries());
-	        if(document.querySelector("#voornaam").innerHTML === "" ){
-	        	console.log("Voornaam vergeten");
-	        	accountData();
-	        }
-	        else if(document.querySelector("#achternaam").innerHTML === ""){
-	        	console.log("Achternaam vergeten");
-	        }
-	        else if(document.querySelector("#mailadres").innerHTML === ""){
-	        	console.log("Email vergeten");
-	        }
-	        else if(document.querySelector("#makepass").innerHTML === ""){
-	        	console.log("Wachtwoord vergeten");
-	        }
-	        else{
-	           fetch("http://localhost:8080/gitaarshop/restservices/account", { method: 'POST', body: encData})
-	            .then(function (response) {
-	                if (response.ok){
-	                    console.log("Account toegevoegd");
-	                    var maak = document.querySelector(".maakaccount");
-	            		var login = document.querySelector(".container");
-
-	            		login.style.display = "block";
-	            		maak.style.display = "none";
-	                    return response.json();
-	                }
-	                else throw "Account kan niet worden toegevoegd";
-	            })
-	        }
+	       var formData = new FormData(document.querySelector("#maakacc"))
+	       var encData = new URLSearchParams(formData.entries());
+	       console.log(encData + " encData");
+	       
+           fetch("http://localhost:8080/gitaarshop/restservices/account", { method: 'POST', body: encData})
+            .then(function (response) {
+                if (response.ok){
+                    console.log("Account toegevoegd");
+                    alert("Account is toegevoegd");
+                    return response.json();
+                }
+                else throw "Account kan niet worden toegevoegd";
+            })
 	    });
 }

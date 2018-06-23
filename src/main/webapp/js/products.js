@@ -1,39 +1,27 @@
 function initPage() {
 	loadProducts();
-//	addProduct();
 	wijzigProduct();
 	deleteProduct();
 }
 
-function checkLogin() {	
-	console.log('godverdomme');
-	var data = sessionStorage.getItem('myJWT');
-	if (data != null) {
-		var list = document.querySelectorAll(".visibleforguest");
-		for (var i = list.length; i--;) {
-		    list[i].className = list[i].className + ' hide';
-		}
-		
-		var list2 = document.querySelectorAll(".visibleforlogin");
-		for (var i = list2.length; i--;) {
-		    list2[i].className = list2[i].className + ' show';
-		}
-		
-	} else {
-		var list = document.querySelectorAll(".visibleforguest");
-		for (var i = list.length; i--;) {
-		    list[i].className = list[i].className + ' show';
-		}
-		
-		var list2 = document.querySelectorAll(".visibleforlogin");
-		for (var i = list2.length; i--;) {
-		    list2[i].className = list2[i].className + ' hide';
-		}
-	}
+function getTokenForPurchase(){
+    token = window.sessionStorage.getItem("myJWT");
+    console.log("tokenbovenste = " + token);
+    parseJwtForPurchase(token);
 }
 
-function loadProducts() {
-	var uri = "https://ipassgitaarshop.herokuapp.com/restservices/products";
+function parseJwtForPurchase (token) {
+	console.log("token = " + jwtmail);
+    var base64Url = token.split('.')[1];
+    var base64 = base64Url.replace('-', '+').replace('_', '/');
+    var base = JSON.parse(window.atob(base64));
+    var jwtmail = base.sub;
+    console.log("jwtmail = " + jwtmail);
+    loadProducts(jwtmail);
+}
+
+function loadProducts(jwtmail) {
+	var uri = "http://localhost:8080/gitaarshop/restservices/products";
 	fetch(uri)
 		.then(response => response.json())
 		.then(function(myJson){
@@ -121,11 +109,11 @@ function loadProducts() {
 				  
 				  var formData = new FormData(document.querySelector("#editProduct"))
 				  var encData = new URLSearchParams(formData.entries());
-				  var encDataWithQuantity = encData + "&quantity=" + quantity;
+				  var encDataWithQuantity = encData + "&quantity=" + quantity + "&email=" + jwtmail;
 				  
 				  console.log(encDataWithQuantity);
 				  
-				  fetch("https://ipassgitaarshop.herokuapp.com/restservices/purchaseproduct", { method: 'POST', body: encData})
+				  fetch("http://localhost:8080/gitaarshop/restservices/purchaseproduct", { method: 'POST', body: encData})
 				  .then(function (response) {
 					  console.log(response + " response");
 				  if (response.ok){
@@ -148,7 +136,7 @@ function addProduct(){
 	        var encData = new URLSearchParams(formData.entries());
 	    	console.log(encData + " encData");
 
-	    	  fetch("https://ipassgitaarshop.herokuapp.com/restservices/products", { method: 'POST', body: encData})
+	    	  fetch("http://localhost:8080/gitaarshop/restservices/products", { method: 'POST', body: encData})
 	          .then(function (response) {
 	        	  console.log(response + " response");
 	              if (response.ok){
@@ -168,12 +156,12 @@ function wijzigProduct(){
         var formData = new FormData(document.querySelector("#editProduct"))
         var encData = new URLSearchParams(formData.entries());
         
-	    fetch("https://ipassgitaarshop.herokuapp.com/restservices/products", { method: 'PUT', body: encData})
+	    fetch("http://localhost:8080/gitaarshop/restservices/products", { method: 'PUT', body: encData})
     	.then(function (response) {
     		console.log("response " + response);
 		    if (response.ok){
 		        console.log("Product gewijzigd"); 
-		        return response.json();
+		        return response();
 		    }
 		    else throw "Kan niet worden gewijzigd";
     	})
@@ -186,7 +174,7 @@ function deleteProduct(){
 		console.log("clickfunctie");
 		console.log(document.querySelector("#editname").value + " lol");
 		var naam = document.querySelector("#editname").value;
-		var url = "https://ipassgitaarshop.herokuapp.com/restservices/products/";
+		var url = "http://localhost:8080/gitaarshop/restservices/products/";
 		var complete_url = url + naam;
 		fetch(complete_url, { method: 'DELETE'})
 		.then(function (response) {
@@ -204,6 +192,6 @@ function refreshPage(){
 
 function logout() {
 	sessionStorage.removeItem('myJWT');
-	window.location.href = 'https://ipassgitaarshop.herokuapp.com/';
+	window.location.href = 'http://localhost:8080/gitaarshop/';
 
 }

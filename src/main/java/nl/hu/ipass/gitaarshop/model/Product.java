@@ -8,6 +8,7 @@ public class Product {
 	private double price;
 	
 	// Getters
+	
 	public int getProductId() {
 		return product_id;
 	}
@@ -29,6 +30,7 @@ public class Product {
 	}
 
 	// Setters
+	
 	public void setProductId(int product_id) {
 		this.product_id = product_id;
 	}

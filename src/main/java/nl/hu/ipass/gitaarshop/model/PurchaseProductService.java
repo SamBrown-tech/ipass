@@ -7,6 +7,7 @@ import nl.hu.ipass.gitaarshop.persistence.PurchaseProductDaoPostgresImpl;
 
 public class PurchaseProductService {
 	
+	// Stores purchaseproduct in database
 	public boolean save(int product_id, int quantity) throws ClassNotFoundException, SQLException {
 		PurchaseProductDaoPostgresImpl p1 = new PurchaseProductDaoPostgresImpl();
         p1.save(product_id, quantity);

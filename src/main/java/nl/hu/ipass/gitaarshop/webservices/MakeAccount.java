@@ -15,17 +15,20 @@ import nl.hu.ipass.gitaarshop.model.ServiceProvider;
 
 @Path("/account")
 public class MakeAccount {
-	
+
 	@POST
 	@Produces("application/json")
-	public Response addAccount(@Context SecurityContext sc, @FormParam("email") String email, @FormParam("firstname") String firstname, 
-			@FormParam("lastname") String lastname, @FormParam("city") String city, @FormParam("zip_code") String zip_code, @FormParam("password")String password, 
-			@FormParam("phone_number")String phone_number, @FormParam("role")String role) throws ClassNotFoundException, SQLException {
+	// Stores a new user in database
+	public Response addAccount(@Context SecurityContext sc, @FormParam("email") String email,
+			@FormParam("firstname") String firstname, @FormParam("lastname") String lastname,
+			@FormParam("makepass") String password) throws ClassNotFoundException, SQLException {
+		System.out.println("beginfunctie");
 		PersonService service = ServiceProvider.getPersonService();
-		if(service.newUser(email, firstname, lastname, city, zip_code, password, phone_number, role)) {
+		if (service.newUser(email, firstname, lastname, password)) {
+			System.out.println("beginfunctie2");
 			return Response.ok().build();
 		}
-		
+
 		return Response.status(409).build();
-		}
+	}
 }

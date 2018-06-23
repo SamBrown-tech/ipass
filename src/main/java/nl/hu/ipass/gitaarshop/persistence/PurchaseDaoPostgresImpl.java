@@ -9,18 +9,22 @@ import java.util.List;
 
 import nl.hu.ipass.gitaarshop.model.Purchase;
 
-
 public class PurchaseDaoPostgresImpl extends PostgresBaseDao implements PurchaseDao  {
+	
+	@Override
+	// Returns a list of purchases
 	public List<Purchase> findAll() throws SQLException, ClassNotFoundException {
 		ArrayList<Purchase> list_purchases = new ArrayList<Purchase>();
 		Connection conn = getConnection();
 
+		// Query to retreive data from the database
 		String query = "SELECT pr.name, pr.price, pp.quantity, p.email, p.person_id\r\n"
 				+ "from product pr, purchaseproduct pp, purchase pu, person p\r\n"
 				+ "where pr.product_id = pp.product_id AND pp.purchase_id = pu.purchase_id and p.person_id = pu.person_id";
 		PreparedStatement stat = conn.prepareStatement(query);
 		ResultSet rs = stat.executeQuery();
 
+		// Loops through all results and adds to list
 		while (rs.next()) {
 			Purchase purchase = new Purchase();
 			purchase.setName(rs.getString("name"));
@@ -33,9 +37,9 @@ public class PurchaseDaoPostgresImpl extends PostgresBaseDao implements Purchase
 		return list_purchases;
 	}
 
-	public List<Purchase> getAllProducten() throws SQLException, ClassNotFoundException {
-		PurchaseDaoPostgresImpl p1 = new PurchaseDaoPostgresImpl();
-		p1.findAll();
-		return p1.findAll();
-	}
+//	public List<Purchase> getAllProducten() throws SQLException, ClassNotFoundException {
+//		PurchaseDaoPostgresImpl p1 = new PurchaseDaoPostgresImpl();
+//		p1.findAll();
+//		return p1.findAll();
+//	}
 }

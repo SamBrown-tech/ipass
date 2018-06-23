@@ -8,6 +8,7 @@ import nl.hu.ipass.gitaarshop.model.Purchase;
 
 public interface PurchaseDao {
 	
+	// Returns a list of all purchases
 	public List<Purchase> findAll() throws SQLException, ClassNotFoundException;
 	
 }

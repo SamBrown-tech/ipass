@@ -9,6 +9,7 @@ public class PurchaseProduct {
 	private int quantity;
 
 	// Getters
+	
 	public int getPurchaseProductId() {
 		return purchaseproduct_id;
 	}

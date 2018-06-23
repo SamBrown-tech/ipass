@@ -8,11 +8,17 @@
 }
 
 #sendForm {
-	color: black;
+	margin-left: 10%;
+}
+
+#verzendemail {
+	margin: 2% 0% 0% 9%;
 }
 
 #productaantal {
 	color: black;
+	text-align: center;
+	width: 50%;
 }
 
 .producttitle {

@@ -6,7 +6,7 @@ public class ServiceProvider {
 	private static PurchaseProductService purchaseproductService = new PurchaseProductService();
 	private static ProductService productService = new ProductService();
 	private static PersonService personService = new PersonService();
-
+	
 	public static PurchaseService getPurchaseService() {
 		return purchaseService;
 	}

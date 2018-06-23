@@ -22,16 +22,16 @@ import nl.hu.ipass.gitaarshop.model.Product;
 import nl.hu.ipass.gitaarshop.model.ProductService;
 import nl.hu.ipass.gitaarshop.model.ServiceProvider;
 
-
-
 @Path("/products")
 public class ProductResource {
 	@GET
 	@Produces("application/json")
+	// Returns a list of all products
 	public String getProducts() throws ClassNotFoundException, SQLException {
 		ProductService service = ServiceProvider.getProductService();
 		JsonArrayBuilder jab = Json.createArrayBuilder();
-		
+
+		// Loops through result and adds an object to the json array
 		for (Product product : service.findAll()) {
 			JsonObjectBuilder job = Json.createObjectBuilder();
 			job.add("product_id", product.getProductId());
@@ -45,49 +45,49 @@ public class ProductResource {
 		return array.toString();
 	}
 	
+	
+
 	@POST
-    //@RolesAllowed("admin")
-    @Produces("application/json")
+	@Produces("application/json")
+	// Stores product in database
 	public Response addProduct(@Context SecurityContext sc, @FormParam("name") String name,
-			  @FormParam("description") String description, @FormParam("image") String image,
-			  @FormParam("price") int price) throws ClassNotFoundException, SQLException {
-        ProductService service = ServiceProvider.getProductService();
-        //boolean role = sc.isUserInRole("admin");
-        //if(role) {
-        if (service.save(name, description, image, price)) {
-            return Response.ok().build();
-       //}
-        }
-        return Response.status(409).build();
-    }
-	
-	@PUT
-//    @RolesAllowed("user")
-    @Produces("application/json")
-    public Response updateProduct(@Context SecurityContext sc, @FormParam("id") int id, @FormParam("name") String name,
-                                  @FormParam("description") String description, @FormParam("image") String image, @FormParam("price") int price) 
-                                		  throws SQLException, ClassNotFoundException {
+			@FormParam("description") String description, @FormParam("image") String image,
+			@FormParam("price") int price) throws ClassNotFoundException, SQLException {
 		ProductService service = ServiceProvider.getProductService();
-        if (service.update(id, name, description, image, price)) {
-            return Response.ok().build();
-        }
-        return Response.accepted().build();
-    }
-	
+
+		if (service.save(name, description, image, price)) {
+			return Response.ok().build();
+		}
+		return Response.status(409).build();
+	}
+
+	@PUT
+	@Produces("application/json")
+	// Updates product in database
+	public Response updateProduct(@Context SecurityContext sc, @FormParam("id") int id, @FormParam("name") String name,
+			@FormParam("description") String description, @FormParam("image") String image,
+			@FormParam("price") int price) throws SQLException, ClassNotFoundException {
+		ProductService service = ServiceProvider.getProductService();
+		
+		if (service.update(id, name, description, image, price)) {
+			return Response.ok().build();
+		}
+		return Response.accepted().build();
+	}
+
 	@DELETE
 	@Path("/{artikelnaam}")
-    //@RolesAllowed("admin")
-    @Produces("application/json")
-    public Response deleteProduct(@Context SecurityContext sc, @PathParam("artikelnaam") String naam) throws SQLException, ClassNotFoundException {
+	@Produces("application/json")
+	// Delete product from database
+	public Response deleteProduct(@Context SecurityContext sc, @PathParam("artikelnaam") String naam)
+			throws SQLException, ClassNotFoundException {
 		System.out.println("Dit geef ik mee: " + naam);
 		ProductService service = ServiceProvider.getProductService();
-        //boolean role = sc.isUserInRole("admin");
-        //if(role) {
-        if (service.delete(naam)) {
-            return Response.ok().build();
-       //}
-        }
-        return Response.status(409).build();
-    }
-	
-}	
+
+		if (service.delete(naam)) {
+			return Response.ok().build();
+		}
+		return Response.status(409).build();
+	}
+
+}

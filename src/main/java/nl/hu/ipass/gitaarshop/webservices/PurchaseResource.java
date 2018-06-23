@@ -19,6 +19,7 @@ public class PurchaseResource {
 
 	@GET
     @Produces("application/json")
+	// Returns a list of all products
     public String getProducten() throws SQLException, ClassNotFoundException {
 		PurchaseService service = ServiceProvider.getPurchaseService();
         JsonArrayBuilder jab = Json.createArrayBuilder();
