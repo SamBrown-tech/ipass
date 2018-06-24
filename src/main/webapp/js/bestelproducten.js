@@ -1,14 +1,15 @@
 function initPagePurchaseProducts() {
 	getTokenPurchaseProducts();
-	parseJwtPurchaseProducts();
 }
 
 function getTokenPurchaseProducts(){
     token = window.sessionStorage.getItem("myJWT");
+    console.log(token + " is token")
     parseJwtPurchaseProducts(token);
 }
 
 function parseJwtPurchaseProducts (token) {
+	console.log("token is " + token );
     var base64Url = token.split('.')[1];
     var base64 = base64Url.replace('-', '+').replace('_', '/');
     var base = JSON.parse(window.atob(base64));
@@ -47,28 +48,13 @@ function loadPurchases(jwtmail) {
 function getAantal(){
     var table = document.getElementById("shoppingcard_table"), sumProduct = 0;
 
-    for(var i = 1; i < table.rows.length; i++)
+    for(var i = 0; i < table.rows.length; i++)
     {
         sumProduct = sumProduct + parseInt(table.rows[i].cells[1].innerHTML) * parseFloat(table.rows[i].cells[2].innerHTML);
+        console.log('sum is ' + sumProduct);
     }
-    document.querySelector(".totalprice").innerHTML = sumProduct;
-}
-
-function addPurchaseProduct(){
-	console.log('test');
-	      var test = document.querySelector('.producttitel').innerHTML;
-	      console.log(test + " value");
-		  var formData = new FormData(document.querySelector("#addPurchaseProductForm"))
-		  var encData = new URLSearchParams(formData.entries());
-		  console.log(encData + " encData");
-
-		  fetch("http://localhost:8080/gitaarshop/restservices/purchaseproduct", { method: 'POST', body: encData})
-		  .then(function (response) {
-			  console.log(response + " response");
-		  if (response.ok){
-		      console.log("Orderproduct toegevoegd."); 
-		      return response.ok();
-		  }
-		  else throw "Kan niet worden toegevoegd.";
-		  })
+    console.log("eindbedrag " + sumProduct);
+    var totalprice = document.getElementById("totalprice");
+    console.log("totalprice = " + totalprice);
+    
 }

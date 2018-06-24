@@ -6,15 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-/**
- * @author Eigenaar
- *
- */
 public class personDaoPostgresImpl extends PostgresBaseDao implements personDao {
-
-    /* (non-Javadoc)
-     * @see nl.hu.ipass.gitaarshop.persistence.personDAO#findRoleForUser(java.lang.String, java.lang.String)
-     */
     @Override
     // Returns role of user
     public String findRoleForUser(String email, String password) throws ClassNotFoundException {
@@ -31,6 +23,23 @@ public class personDaoPostgresImpl extends PostgresBaseDao implements personDao 
         }
         System.out.println(role);
         return role;
+    }
+    
+    // Returns id of user
+    public int findIdOfUser(String email) throws ClassNotFoundException, SQLException {
+    	String query = ("SELECT person_id FROM person WHERE email= '" + email + "'");
+        int id = 0;
+        try (Connection con = super.getConnection()) {
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(query);
+            while (rs.next()) {
+                id = rs.getInt("person_id");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        System.out.println(id);
+        return id;
     }
     
     // Inserts a new user in the database    

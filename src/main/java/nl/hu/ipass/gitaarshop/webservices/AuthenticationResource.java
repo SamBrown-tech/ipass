@@ -22,21 +22,24 @@ import nl.hu.ipass.gitaarshop.persistence.personDaoPostgresImpl;
 
 @Path("/authentications")
 public class AuthenticationResource {
+	
+	// Generates random key
 	final static public Key key = MacProvider.generateKey();
 
 	  @POST
 	  @Produces(MediaType.APPLICATION_JSON)
 	  @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+	  // To authenticate the user
 	  public Response authenticateUser(@FormParam("email") String email, 
 	                                   @FormParam("password") String password) throws ClassNotFoundException, SQLException {
 	    try {
-	      // Authenticate the user against the database
+	      // Authenticate the user in the database
 	      personDao dao = new personDaoPostgresImpl();
-	      String rol = dao.findRoleForUser(email, password);
+	      String role = dao.findRoleForUser(email, password);
 	      
-	      if (rol == null) { throw new IllegalArgumentException("No user found!");  } 
+	      if (role == null) { throw new IllegalArgumentException("No user found!");  } 
 	      
-	      String token = createToken(email, rol);
+	      String token = createToken(email, role);
 
 	      SimpleEntry<String, String> JWT = new SimpleEntry<String, String>("JWT", token);
 	      return Response.ok(JWT).build();
@@ -45,14 +48,17 @@ public class AuthenticationResource {
 	    } catch (JwtException | IllegalArgumentException e) 
 	        { return Response.status(Response.Status.UNAUTHORIZED).build(); }
 	  }
-	  private String createToken(String email, String rol) throws JwtException {
+	  
+	  // Creates a token
+	  private String createToken(String email, String role) throws JwtException {
 		    Calendar expiration = Calendar.getInstance();
 		    expiration.add(Calendar.MINUTE, 30);
 		  
+		    // Builds the token and returns
 		    return Jwts.builder()
 		      .setSubject(email)
 		      .setExpiration(expiration.getTime())
-		      .claim("role", rol)
+		      .claim("role", role)
 		      .signWith(SignatureAlgorithm.HS512, key)
 		      .compact();
 		 }

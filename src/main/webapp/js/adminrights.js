@@ -1,6 +1,5 @@
 function initPageAdmin() {
 	getToken();
-	parseJwt();
 }
 
 function getToken(){

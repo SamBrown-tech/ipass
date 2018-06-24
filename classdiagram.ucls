@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.2" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="nl.hu.ipass.gitaarshop.model.Product" project="gitaarshop" 
+    file="/gitaarshop/src/main/java/nl/hu/ipass/gitaarshop/model/Product.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="351" width="154" x="1588" y="1038"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="nl.hu.ipass.gitaarshop.model.PurchaseService" project="gitaarshop" 
+    file="/gitaarshop/src/main/java/nl/hu/ipass/gitaarshop/model/PurchaseService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="142" x="855" y="423"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="nl.hu.ipass.gitaarshop.webservices.PersonResource" project="gitaarshop" 
+    file="/gitaarshop/src/main/java/nl/hu/ipass/gitaarshop/webservices/PersonResource.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="332" x="552" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="nl.hu.ipass.gitaarshop.webservices.PurchaseResource" project="gitaarshop" 
+    file="/gitaarshop/src/main/java/nl/hu/ipass/gitaarshop/webservices/PurchaseResource.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="156" x="924" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="nl.hu.ipass.gitaarshop.webservices.AuthenticationResource" project="gitaarshop" 
+    file="/gitaarshop/src/main/java/nl/hu/ipass/gitaarshop/webservices/AuthenticationResource.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="135" width="227" x="307" y="423"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="nl.hu.ipass.gitaarshop.webservices.mailService" project="gitaarshop" 
+    file="/gitaarshop/src/main/java/nl/hu/ipass/gitaarshop/webservices/mailService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="213" x="42" y="230"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="7" language="java" name="nl.hu.ipass.gitaarshop.persistence.PurchaseProductDao" project="gitaarshop" 
+    file="/gitaarshop/src/main/java/nl/hu/ipass/gitaarshop/persistence/PurchaseProductDao.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="81" width="152" x="1079" y="863"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="8" language="java" name="nl.hu.ipass.gitaarshop.persistence.PurchaseDaoPostgresImpl" project="gitaarshop" 
+    file="/gitaarshop/src/main/java/nl/hu/ipass/gitaarshop/persistence/PurchaseDaoPostgresImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="177" x="862" y="670"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="nl.hu.ipass.gitaarshop.persistence.PurchaseProductDaoPostgresImpl" 
+    project="gitaarshop" 
+    file="/gitaarshop/src/main/java/nl/hu/ipass/gitaarshop/persistence/PurchaseProductDaoPostgresImpl.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="222" x="1079" y="670"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="nl.hu.ipass.gitaarshop.webservices.SendEmail" project="gitaarshop" 
+    file="/gitaarshop/src/main/java/nl/hu/ipass/gitaarshop/webservices/SendEmail.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="215" x="42" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="nl.hu.ipass.gitaarshop.model.ServiceProvider" project="gitaarshop" 
+    file="/gitaarshop/src/main/java/nl/hu/ipass/gitaarshop/model/ServiceProvider.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="153" width="292" x="924" y="230"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="12" language="java" name="nl.hu.ipass.gitaarshop.persistence.PurchaseDao" project="gitaarshop" 
+    file="/gitaarshop/src/main/java/nl/hu/ipass/gitaarshop/persistence/PurchaseDao.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="81" width="152" x="862" y="863"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="13" language="java" name="nl.hu.ipass.gitaarshop.model.PurchaseProductService" project="gitaarshop" 
+    file="/gitaarshop/src/main/java/nl/hu/ipass/gitaarshop/model/PurchaseProductService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="167" x="1237" y="423"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="14" language="java" name="nl.hu.ipass.gitaarshop.persistence.personDao" project="gitaarshop" 
+    file="/gitaarshop/src/main/java/nl/hu/ipass/gitaarshop/persistence/personDao.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="241" x="307" y="863"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="15" language="java" name="nl.hu.ipass.gitaarshop.persistence.personDaoPostgresImpl" project="gitaarshop" 
+    file="/gitaarshop/src/main/java/nl/hu/ipass/gitaarshop/persistence/personDaoPostgresImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="135" width="241" x="556" y="670"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="16" language="java" name="nl.hu.ipass.gitaarshop.persistence.ProductDao" project="gitaarshop" 
+    file="/gitaarshop/src/main/java/nl/hu/ipass/gitaarshop/persistence/ProductDao.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="135" width="226" x="1320" y="863"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="17" language="java" name="nl.hu.ipass.gitaarshop.model.ProductService" project="gitaarshop" 
+    file="/gitaarshop/src/main/java/nl/hu/ipass/gitaarshop/model/ProductService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="153" width="226" x="1444" y="423"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="18" language="java" name="nl.hu.ipass.gitaarshop.model.PersonService" project="gitaarshop" 
+    file="/gitaarshop/src/main/java/nl/hu/ipass/gitaarshop/model/PersonService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="241" x="574" y="423"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="19" language="java" name="nl.hu.ipass.gitaarshop.webservices.AuthenticationFilter" project="gitaarshop" 
+    file="/gitaarshop/src/main/java/nl/hu/ipass/gitaarshop/webservices/AuthenticationFilter.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="201" x="295" y="230"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="20" language="java" name="nl.hu.ipass.gitaarshop.webservices.MySecurityContext" project="gitaarshop" 
+    file="/gitaarshop/src/main/java/nl/hu/ipass/gitaarshop/webservices/MySecurityContext.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="207" width="225" x="42" y="423"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="21" language="java" name="nl.hu.ipass.gitaarshop.webservices.ProductResource" project="gitaarshop" 
+    file="/gitaarshop/src/main/java/nl/hu/ipass/gitaarshop/webservices/ProductResource.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="153" width="354" x="1444" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="22" language="java" name="nl.hu.ipass.gitaarshop.webservices.PurchaseProductResource" project="gitaarshop" 
+    file="/gitaarshop/src/main/java/nl/hu/ipass/gitaarshop/webservices/PurchaseProductResource.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="263" x="1120" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="23" language="java" name="nl.hu.ipass.gitaarshop.persistence.ProductDaoPostgresImpl" project="gitaarshop" 
+    file="/gitaarshop/src/main/java/nl/hu/ipass/gitaarshop/persistence/ProductDaoPostgresImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="153" width="226" x="1341" y="670"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="24" language="java" name="nl.hu.ipass.gitaarshop.persistence.PostgresBaseDao" project="gitaarshop" 
+    file="/gitaarshop/src/main/java/nl/hu/ipass/gitaarshop/persistence/PostgresBaseDao.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="160" x="1037" y="423"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <dependency id="25">    
+    <bendpoint x="572" y="230"/>    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="18"/>  
+  </dependency>  
+  <generalization id="26">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="24"/>  
+  </generalization>  
+  <generalization id="27">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="24"/>  
+  </generalization>  
+  <association id="28">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="29" name="personService"/>      
+      <multiplicity id="30" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="18" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="31">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <realization id="32">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="7"/>  
+  </realization>  
+  <dependency id="33">    
+    <bendpoint x="1246" y="230"/>    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="13"/>  
+  </dependency>  
+  <dependency id="34">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="15"/>  
+  </dependency>  
+  <dependency id="35">    
+    <bendpoint x="1700" y="230"/>    
+    <bendpoint x="1700" y="423"/>    
+    <bendpoint x="1700" y="670"/>    
+    <bendpoint x="1700" y="863"/>    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <association id="36">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="37" name="purchaseService"/>      
+      <multiplicity id="38" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="39">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="8"/>  
+  </dependency>  
+  <generalization id="40">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="24"/>  
+  </generalization>  
+  <realization id="41">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="16"/>  
+  </realization>  
+  <dependency id="42">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="11"/>  
+  </dependency>  
+  <dependency id="43">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="20"/>  
+  </dependency>  
+  <dependency id="44">    
+    <bendpoint x="1576" y="863"/>    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <dependency id="45">    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <generalization id="46">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="24"/>  
+  </generalization>  
+  <dependency id="47">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="6"/>  
+  </dependency>  
+  <dependency id="48">    
+    <bendpoint x="867" y="230"/>    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="2"/>  
+  </dependency>  
+  <dependency id="49">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="11"/>  
+  </dependency>  
+  <dependency id="50">    
+    <bendpoint x="1453" y="230"/>    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="17"/>  
+  </dependency>  
+  <dependency id="51">    
+    <bendpoint x="316" y="670"/>    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="14"/>  
+  </dependency>  
+  <dependency id="52">    
+    <bendpoint x="1597" y="670"/>    
+    <bendpoint x="1597" y="863"/>    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <dependency id="53">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="11"/>  
+  </dependency>  
+  <realization id="54">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="14"/>  
+  </realization>  
+  <association id="55">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="56" name="productService"/>      
+      <multiplicity id="57" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="58">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="12"/>  
+  </realization>  
+  <dependency id="59">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="15"/>  
+  </dependency>  
+  <dependency id="60">    
+    <bendpoint x="888" y="230"/>    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="18"/>  
+  </dependency>  
+  <association id="61">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="62" name="purchaseproductService"/>      
+      <multiplicity id="63" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="64">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="23"/>  
+  </dependency>  
+  <dependency id="65">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="11"/>  
+  </dependency>  
+  <dependency id="66">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="9"/>  
+  </dependency>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

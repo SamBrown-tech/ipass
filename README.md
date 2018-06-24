@@ -1,12 +1,10 @@
-## WAC - Web Application Construction
-Propedeuse jaar semester 2.
+## IPASS - Gitaarshop
+Propedeuse jaar semester 2 Eindproject.
 
 ### Inhoud van repo
-* Sockets, Clients & Servers
-* HTML5 Web Storage & CSS Grid Layout
+* HTML5 Web Storage & Bootstrap
 * Javascript
-* OpenWeathermap, IP-API & WorldRecources
-* RESTful Webservices & Relational Databases
+* RESTful Webservices & Relational Database
 * Authentication, Authorization & HTTPS
 * Webservices - Jersey & Maven
 * [Maven](https://maven.apache.org/) - Dependency Management

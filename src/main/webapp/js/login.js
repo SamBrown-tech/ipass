@@ -12,7 +12,6 @@ input.addEventListener("keyup", function(event) {
 	});
 
 function myLogin(){
-	console.log("test")
     var button = document.querySelector('#loginbtn');
     button.addEventListener('click', function(){
         var formData = new FormData(document.querySelector("#inloggegevens"))
@@ -36,7 +35,6 @@ function myLogin(){
 
 
 function addAccount(){
-	console.log("test");
 	 var button = document.getElementById("createbtn");
 	    button.addEventListener('click', function(){
 	       var formData = new FormData(document.querySelector("#maakacc"))

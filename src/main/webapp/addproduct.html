@@ -54,9 +54,11 @@
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
-				<ul class="navbar-nav ml-auto floatright">
-					<li class="nav-item"><a class="nav-link js-scroll-trigger fontsizenav" href="index.html">Home</a></li>
-					<li class="nav-item"><a class="nav-link js-scroll-trigger fontsizenav" href="addproduct.html">Gitaar toevoegen</a></li>
+				<ul class="navbar-nav ml-auto floatright">				
+					<li class="nav-item"><a class="nav-link js-scroll-trigger fontsizenav" href="index.html">Assortiment</a></li>
+					<li class="nav-item"><a class="nav-link js-scroll-trigger fontsizenav visibleCustomer" href="shoppingcart.html">Winkelwagen</a></li>
+					<li class="nav-item"><a class="nav-link js-scroll-trigger fontsizenav visibleAdmin" href="addproduct.html">Gitaar toevoegen</a></li>
+					<li class="nav-item"><a class="nav-link js-scroll-trigge fontsizenav" href="contact.html">Contact</a></li>
 					<li class="nav-item"><a class="nav-link js-scroll-trigger fontsizenav" onclick="logout();">Uitloggen</a></li>
 				</ul>
 			</div>
@@ -67,23 +69,21 @@
 	
 	<header class="masthead text-center text-white d-flex">
 		<div class="container my-auto">
-			<h1 class="text-uppercase"><strong>Contact</strong></h1>
+			<h1 class="text-uppercase"><strong>Gitaar toevoegen</strong></h1>
 			<div class="row">
 				<section class="p-0" id="portfolio">
 				<div class="container-fluid p-0 productswidth">
 					<div class="no-gutters popup-gallery">
 					
-						<!--  Email FORM -->
-						<h1>Gitaar toevoegen</h1>
+						<!--  Add product FORM -->
 						<div class="addBox">
-							<form id="addProduct" autocomplete="on">
-								<div><label>Naam: </label><input type="text" id="name" name="name"></div><br>
-								<div><label>Omschrijving: </label><input type="text" id="description" name="description"></div><br>
-								<div><label>Afbeelding: </label><input type="text" id="image" name="image"></div><br>
-								<div><label>Prijs: </label><input type="text" id="price" name="price"></div><br>
+							<form id="addProduct" autocomplete="off">
+								<h3>Naam: </h3><input type="text" id="name" name="name"><br>
+								<h3>Omschrijving:</h3><input type="text" id="description" name="description"><br>
+								<h3>Afbeelding:</h3><input type="text" id="image" name="image"><br>
+								<h3>Prijs:</h3><input type="number" id="price" name="price"><br>
 							</form>
-							<div><button onClick="addProduct()" id="add">VOEGTOE</button>
-							<button id="sluiten">SLUIT</button></div>
+							<button onClick="addProduct()" id="add">Toevoegen</button>
 						</div>
 					</div>
 				</div>
@@ -91,6 +91,24 @@
 			</div>
 		</div>
 	</header>
+	<div class="row">
+		<div class="col-lg-8 mx-auto text-center">
+			<h2 class="section-heading">Heeft u vragen?</h2>
+			<hr class="my-4">
+			<p class="mb-5 visibleforcustomer">U kunt ons elke werkdag tussen 9:00 uur en 17:00 uur bellen. 
+			<br>Daarnaast kunt u ons ook mailen voor algemene vragen!</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-4 ml-auto text-center">
+			<i class="fa fa-phone fa-3x mb-3 sr-contact"></i>
+			<p>06 123 123 23</p>
+		</div>
+		<div class="col-lg-4 mr-auto text-center">
+			<i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
+			<p><a href="contact.html" class="visibleforguest">info@gitaarshopalphen.nl</a></p>
+		</div>
+	</div>	
 
 	<!-- Bootstrap core JavaScript -->
 	<script src="vendor/jquery/jquery.min.js"></script>

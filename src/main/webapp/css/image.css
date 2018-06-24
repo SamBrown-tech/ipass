@@ -11,8 +11,24 @@
 	margin-left: 10%;
 }
 
+#sendForm input, textarea {
+	color:black;
+}
+
 #verzendemail {
 	margin: 2% 0% 0% 9%;
+}
+
+.addBox {
+    margin-left: 10%;
+}
+
+.addBox button {
+	margin-top: 2%;
+}
+
+.addBox input, button {
+	color: black;
 }
 
 #productaantal {
