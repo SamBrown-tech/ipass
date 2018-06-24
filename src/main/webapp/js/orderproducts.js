@@ -2,12 +2,14 @@ function initPagePurchaseProducts() {
 	getTokenPurchaseProducts();
 }
 
+
+/* gets user token */
 function getTokenPurchaseProducts(){
     token = window.sessionStorage.getItem("myJWT");
-    console.log(token + " is token")
     parseJwtPurchaseProducts(token);
 }
 
+/* retreives email from the java web token */
 function parseJwtPurchaseProducts (token) {
 	console.log("token is " + token );
     var base64Url = token.split('.')[1];
@@ -17,6 +19,7 @@ function parseJwtPurchaseProducts (token) {
     loadPurchases(jwtmail);
 }
 
+/* loads purchases of current user */
 function loadPurchases(jwtmail) {
 	var uri = "http://localhost:8080/gitaarshop/restservices/purchase";
 	fetch(uri)
@@ -38,23 +41,21 @@ function loadPurchases(jwtmail) {
                 cell3.innerHTML = purchase.price;
             }
             else{
-                console.log("Hij is NIET gelijk");
+                console.log("Webtoken komt niet overeen");
             }
         }
-        getAantal();
+        getTotalPrice();
     })
 }
-
-function getAantal(){
-    var table = document.getElementById("shoppingcard_table"), sumProduct = 0;
+/* Gets amount of total price */
+function getTotalPrice(){
+    var table = document.getElementById("shoppingcard_table"), totalPrice = 0;
 
     for(var i = 0; i < table.rows.length; i++)
     {
-        sumProduct = sumProduct + parseInt(table.rows[i].cells[1].innerHTML) * parseFloat(table.rows[i].cells[2].innerHTML);
-        console.log('sum is ' + sumProduct);
+    	totalPrice = totalPrice + parseInt(table.rows[i].cells[1].innerHTML) * parseFloat(table.rows[i].cells[2].innerHTML);
     }
-    console.log("eindbedrag " + sumProduct);
+    console.log("eindbedrag " + totalPrice);
     var totalprice = document.getElementById("totalprice");
-    console.log("totalprice = " + totalprice);
     
 }

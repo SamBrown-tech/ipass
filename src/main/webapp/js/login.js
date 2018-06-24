@@ -1,8 +1,9 @@
+/* onload */
 function initPageLogin(){
 	myLogin();
 	addAccount();
 }
-
+/* press enter to login */
 var input = document.getElementById("inloggegevens");
 input.addEventListener("keyup", function(event) {
     event.preventDefault();
@@ -11,6 +12,7 @@ input.addEventListener("keyup", function(event) {
 	    }
 	});
 
+/* authenticates the login attempt */
 function myLogin(){
     var button = document.querySelector('#loginbtn');
     button.addEventListener('click', function(){
@@ -33,7 +35,7 @@ function myLogin(){
             });
 }
 
-
+/* creates new account */
 function addAccount(){
 	 var button = document.getElementById("createbtn");
 	    button.addEventListener('click', function(){

@@ -2,6 +2,7 @@ function initPageAdmin() {
 	getToken();
 }
 
+/* checks if user is logged in, to display certain items */
 function getToken(){
     token = window.sessionStorage.getItem("myJWT");
 	if (token == null) {
@@ -31,6 +32,7 @@ function getToken(){
 	}
 }
 
+/* uses token to display items that are available for a certain role */
 function parseJwt (token) {
     var base64Url = token.split('.')[1];;
     var base64 = base64Url.replace('-', '+').replace('_', '/');

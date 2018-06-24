@@ -1,3 +1,4 @@
+/* retreives data from emailform and passes on to restservice */
 function sendEmail(){
 	document.querySelector("#verzendemail").addEventListener('click', function(event){
 		console.log("ferji")

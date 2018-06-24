@@ -29,70 +29,70 @@ function loadProducts(jwtmail) {
 				var image = product.image;
 				var price = product.price;
 				
-				var div = document.createElement("div");
-				div.className = "col-lg-4 col-sm-6 productcard";
+				var productcard = document.createElement("div");
+				productcard.className = "col-lg-4 col-sm-6 productcard";
 	
-				var div2 = document.createElement("div");
-				div2.className = "service-box mt-5 mx-auto";
+				var stylingdiv = document.createElement("div");
+				stylingdiv.className = "service-box mt-5 mx-auto";
 				
 				var imageElement = document.createElement("img");
 				imageElement.className = "imgsizel";
 				imageElement.src = "img/" + image;
 				
-				div2.appendChild(imageElement);
+				stylingdiv.appendChild(imageElement);
 				
-				var div3 = document.createElement("div");
-				div3.className = "card-body";
+				var card_body = document.createElement("div");
+				card_body.className = "card-body";
 				
-				var pid = document.createElement("p");
-				pid.className = "productid hide";
-				pid.innerHTML = id;
+				var productid = document.createElement("p");
+				productid.className = "productid hide";
+				productid.innerHTML = id;
 				
-				var titel = document.createElement("h3");
-				titel.className = "mb-3 producttitel";
-				titel.innerHTML = name;
+				var title = document.createElement("h3");
+				title.className = "mb-3 producttitle";
+				title.innerHTML = name;
 				
 				var text = document.createElement("p");
 				text.className = "mb-0 productdescription";
 				text.innerHTML = description;
 				
-				var prijs = document.createElement("p");
-				prijs.className = "mb-0 productprice";
-				prijs.innerHTML = "€ " + price;
+				var product_price = document.createElement("p");
+				product_price.className = "mb-0 productprice";
+				product_price.innerHTML = "€ " + price;
 				
-				var aantal = document.createElement("div");
-				aantal.innerHTML= '<label>Aantal: </label><input type="number" min="0" id="productaantal" name="productaantal" value=1 /></input>';
+				var amount = document.createElement("div");
+				amount.innerHTML= '<label>Aantal: </label><input type="number" min="0" id="productaantal" name="productaantal" value=1 /></input>';
 
-				div3.appendChild(pid);
-				div3.appendChild(titel);
-				div3.appendChild(text);
-				div3.appendChild(prijs);
-				div3.appendChild(aantal);
+				card_body.appendChild(productid);
+				card_body.appendChild(title);
+				card_body.appendChild(text);
+				card_body.appendChild(product_price);
+				card_body.appendChild(amount);
 				
-				var div4 = document.createElement("div");
-				div4.className = "card-footer";
+				var card_footer = document.createElement("div");
+				card_footer.className = "card-footer";
 				
-				var button = document.createElement("button");
-				button.className = "btn btn btn-success";
-				button.setAttribute("data-toggle", "modal");
-				button.setAttribute("data-target", "#myModal");
-				button.innerHTML = "Beheren";
+				var manage = document.createElement("button");
+				manage.className = "btn btn btn-success visibleAdmin";
+				manage.setAttribute("data-toggle", "modal");
+				manage.setAttribute("data-target", "#myModal");
+				manage.innerHTML = "Beheren";
 				
-				var button2 = document.createElement("button");
-				button2.className = "btn btn btn-success";
-				button2.setAttribute("id", "addOrderPurchaseProduct");
-				button2.innerHTML = "Voeg toe";
+				var product_to_shoppingcart = document.createElement("button");
+				product_to_shoppingcart.className = "btn btn btn-success";
+				product_to_shoppingcart.setAttribute("id", "addOrderPurchaseProduct visibleCustomer");
+				product_to_shoppingcart.innerHTML = "Voeg toe";
 				
-				div4.appendChild(button);
-				div4.appendChild(button2);
-				div2.appendChild(div3);
-				div2.appendChild(div4);
-				div.appendChild(div2);
+				card_footer.appendChild(manage);
+				card_footer.appendChild(product_to_shoppingcart);
+				stylingdiv.appendChild(card_body);
+				stylingdiv.appendChild(card_footer);
+				productcard.appendChild(stylingdiv);
 				
 				var row = document.querySelector("#producten");
 				row.appendChild(div);
 
-				button.addEventListener('click', function(e){
+				manage.addEventListener('click', function(e){
 					
 					document.querySelector("#productid").value = product.product_id;
 					document.querySelector("#editname").value = product.name;
@@ -101,7 +101,7 @@ function loadProducts(jwtmail) {
 					document.querySelector("#editimage").value = product.image;
 				});
 		
-				button2.addEventListener('click', function(e){
+				product_to_shoppingcart.addEventListener('click', function(e){
 				  var url = "http://localhost:8080/gitaarshop/restservices/purchaseproduct/" + jwtmail + product.product_id;
 				  
 				  var response = confirm("Weet u zeker dat u dit product wilt toevoegen aan uw winkelwagen?");
