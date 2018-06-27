@@ -18,7 +18,7 @@ function parseJwtForPurchase (token) {
 }
 
 function loadProducts(jwtmail) {
-	var uri = "https://santinofirstapp.herokuapp.com/restservices/products";
+	var uri = "https://ipassgitaarshop.herokuapp.com/restservices/products";
 	fetch(uri)
 	.then(response => response.json())
 	.then(function(myJson){
@@ -102,7 +102,7 @@ function loadProducts(jwtmail) {
 			});
 	
 			product_to_shoppingcart.addEventListener('click', function(e){
-			  var url = "https://santinofirstapp.herokuapp.com/restservices/purchaseproduct/" + jwtmail + product.product_id;
+			  var url = "https://ipassgitaarshop.herokuapp.com/restservices/purchaseproduct/" + jwtmail + product.product_id;
 			  
 			  var response = confirm("Weet u zeker dat u dit product wilt toevoegen aan uw winkelwagen?");
 			  if ( response == true ){  
@@ -131,13 +131,13 @@ function addProduct(){
 		var encData = new URLSearchParams(formData.entries());
 		var response = confirm("Weet u zeker dat u dit product wilt toevoegen?");
 		if ( response == true ){ 
-			fetch("https://santinofirstapp.herokuapp.com/restservices/products", { method: 'POST', body: encData})
+			fetch("https://ipassgitaarshop.herokuapp.com/restservices/products", { method: 'POST', body: encData})
 			.then(function (response) {
 				console.log(response + " response");
 				if (response.ok){
 					console.log("Product is toegevoegd."); 
 					alert("Product is toegevoegd.");
-					window.location.href = "https://santinofirstapp.herokuapp.com/";
+					window.location.href = "https://ipassgitaarshop.herokuapp.com/";
 					    
 					return response.ok();
 				} else throw "Kan niet worden toegevoegd.";
@@ -153,7 +153,7 @@ function wijzigProduct(){
         var encData = new URLSearchParams(formData.entries());
         var response = confirm("Weet u zeker dat u dit product wilt wijzigen?");
 		if ( response == true ){  
-		    fetch("https://santinofirstapp.herokuapp.com/restservices/products", { method: 'PUT', body: encData})
+		    fetch("https://ipassgitaarshop.herokuapp.com/restservices/products", { method: 'PUT', body: encData})
 	    	.then(function (response) {
 	    		console.log("response " + response);
 			    if (response.ok){
