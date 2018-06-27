@@ -14,9 +14,7 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
-import javax.ws.rs.core.Context;
 import javax.ws.rs.core.Response;
-import javax.ws.rs.core.SecurityContext;
 
 import nl.hu.ipass.gitaarshop.model.Product;
 import nl.hu.ipass.gitaarshop.model.ProductService;
@@ -50,7 +48,7 @@ public class ProductResource {
 	@POST
 	@Produces("application/json")
 	// Stores product in database
-	public Response addProduct(@Context SecurityContext sc, @FormParam("name") String name,
+	public Response addProduct(@FormParam("name") String name,
 			@FormParam("description") String description, @FormParam("image") String image,
 			@FormParam("price") int price) throws ClassNotFoundException, SQLException {
 		ProductService service = ServiceProvider.getProductService();
@@ -64,7 +62,7 @@ public class ProductResource {
 	@PUT
 	@Produces("application/json")
 	// Updates product in database
-	public Response updateProduct(@Context SecurityContext sc, @FormParam("id") int id, @FormParam("name") String name,
+	public Response updateProduct(@FormParam("id") int id, @FormParam("name") String name,
 			@FormParam("description") String description, @FormParam("image") String image,
 			@FormParam("price") int price) throws SQLException, ClassNotFoundException {
 		ProductService service = ServiceProvider.getProductService();
@@ -79,7 +77,7 @@ public class ProductResource {
 	@Path("/{artikelnaam}")
 	@Produces("application/json")
 	// Delete product from database
-	public Response deleteProduct(@Context SecurityContext sc, @PathParam("artikelnaam") String naam)
+	public Response deleteProduct(@PathParam("artikelnaam") String naam)
 			throws SQLException, ClassNotFoundException {
 		System.out.println("Dit geef ik mee: " + naam);
 		ProductService service = ServiceProvider.getProductService();
