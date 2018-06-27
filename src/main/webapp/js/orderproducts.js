@@ -21,7 +21,7 @@ function parseJwtPurchaseProducts (token) {
 
 /* loads purchases of current user */
 function loadPurchases(jwtmail) {
-	var uri = "http://localhost:8080/gitaarshop/restservices/purchase";
+	var uri = "https://ipassgitaarshop.herokuapp.com/restservices/purchase";
 	fetch(uri)
 	.then(response => response.json())
 	.then(function(myJson){

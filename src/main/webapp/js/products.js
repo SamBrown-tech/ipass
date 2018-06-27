@@ -160,7 +160,7 @@ function wijzigProduct(){
 			    	
 					console.log("Product gewijzigd"); 
 			        alert("Product is gewijzigd.");
-			        window.location.href = "http://localhost:8080/gitaarshop/";
+			        window.location.href = "https://ipassgitaarshop.herokuapp.com/";
 					
 			        return response();
 			    }
@@ -174,7 +174,7 @@ function deleteProduct(){
 	document.querySelector("#delete").addEventListener('click', function(event){
 
 		var naam = document.querySelector("#editname").value;
-		var url = "http://localhost:8080/gitaarshop/restservices/products/";
+		var url = "https://ipassgitaarshop.herokuapp.com/restservices/products/";
 		var complete_url = url + naam;
 	    var response = confirm("Weet u zeker dat u dit product wilt verwijderen?");
 	    if ( response == true ){  
@@ -183,7 +183,7 @@ function deleteProduct(){
 		        if (response.ok){
 		            console.log("Product verwijderd"); 
 		            alert("Product is verwijderd.");
-		            window.location.href = "http://localhost:8080/gitaarshop/";
+		            window.location.href = "https://ipassgitaarshop.herokuapp.com/";
 		            
 		        }
 		        else throw "Kan niet worden verwijderd. ";
@@ -198,5 +198,5 @@ function refreshPage(){
 
 function logout() {
 	sessionStorage.removeItem('myJWT');
-	window.location.href = 'http://localhost:8080/gitaarshop/';
+	window.location.href = 'https://ipassgitaarshop.herokuapp.com/';
 }

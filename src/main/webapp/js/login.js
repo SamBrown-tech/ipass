@@ -20,11 +20,11 @@ function myLogin(){
         var encData = new URLSearchParams(formData.entries());
         console.log( "haha");
 
-           fetch("http://localhost:8080/gitaarshop/restservices/authentications", { method: 'POST', body: encData, headers: {'Authorization': 'Bearer ' + window.sessionStorage.getItem("myJWT")}})
+           fetch("https://ipassgitaarshop.herokuapp.com/restservices/authentications", { method: 'POST', body: encData, headers: {'Authorization': 'Bearer ' + window.sessionStorage.getItem("myJWT")}})
             .then(function (response) {
                 if (response.ok){
                     console.log("ingelogt"); 
-                    window.location.replace("http://localhost:8080/gitaarshop");
+                    window.location.replace("https://ipassgitaarshop.herokuapp.com/");
 //                    javascript:history.back();
                     return response.json();
                 }
@@ -43,7 +43,7 @@ function addAccount(){
 	       var encData = new URLSearchParams(formData.entries());
 	       console.log(encData + " encData");
 	       
-           fetch("http://localhost:8080/gitaarshop/restservices/account", { method: 'POST', body: encData})
+           fetch("https://ipassgitaarshop.herokuapp.com/restservices/account", { method: 'POST', body: encData})
             .then(function (response) {
                 if (response.ok){
                     console.log("Account toegevoegd");
