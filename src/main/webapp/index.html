@@ -42,8 +42,7 @@
 <link href="css/main.css" rel="stylesheet">
 
 </head>
-<body onLoad="myLogin(); getToken(); addAccount(); initPage();">
-
+<body onLoad="myLogin(); initPage(); addAccount(); getToken();">
 	<!-- Navigation -->
 	<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
 		<div class="container nomargin">
@@ -70,7 +69,6 @@
 	<header class="masthead text-center text-white d-flex">
 		<div class="container my-auto">
 			<h1 class="text-uppercase visibleLogin"><strong>Artikelen</strong></h1>
-			<div crud="crudalertbox"></div>
 			<div class="row">
 				<div class="col-lg-10 mx-auto">
 					<h1 class="text-uppercase visibleGuest"><strong>Gitaarshop</strong></h1>
@@ -204,7 +202,6 @@
 			</div>
 		</div>
 	</section>
-
 	<!-- Bootstrap core JavaScript -->
 	<script src="vendor/jquery/jquery.min.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
