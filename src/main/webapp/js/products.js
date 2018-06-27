@@ -195,8 +195,3 @@ function deleteProduct(){
 function refreshPage(){
     window.location.reload();
 } 
-
-function logout() {
-	sessionStorage.removeItem('myJWT');
-	window.location.href = 'https://ipassgitaarshop.herokuapp.com/';
-}

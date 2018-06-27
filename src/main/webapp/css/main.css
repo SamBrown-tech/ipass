@@ -77,13 +77,17 @@
 	max-width: 1540px !important;
 }
 
+.thead-light th {
+	text-align center;
+}
+
 .productswidth {
 	width: 1046px !important;
 }
 
 .inlogbutton {
 	width: 20%;
-	margin-left: 40%;
+	margin-left: 40% !important;
 }
 
 hr {
