@@ -19,7 +19,7 @@ public class PersonResource {
 	@POST
 	@Produces("application/json")
 	// Stores a new user in database
-	public Response newUser(@Context SecurityContext sc, @FormParam("email") String email,
+	public Response newUser(@FormParam("email") String email,
 			@FormParam("firstname") String firstname, @FormParam("lastname") String lastname,
 			@FormParam("makepass") String password) throws ClassNotFoundException, SQLException {
 		System.out.println("beginfunctie");
