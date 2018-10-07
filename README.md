@@ -1,7 +1,7 @@
 ## IPASS - Gitaarshop
 Propedeuse jaar semester 2 Eindproject.
 
-### Inhoud van repo
+### Gebruikte technieken
 * HTML5 Web Storage & Bootstrap
 * Javascript
 * RESTful Webservices & Relational Database
