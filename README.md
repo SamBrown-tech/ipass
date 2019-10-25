@@ -1,5 +1,5 @@
 ## IPASS - Gitaarshop
-Propedeuse jaar semester 2 Eindproject.
+Propedeuse jaar Eindproject.
 
 ### Gebruikte technieken
 * HTML5 Web Storage & Bootstrap
